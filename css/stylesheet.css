@@ -1,0 +1,50 @@
+h2 {
+    color: darkblue
+}
+
+.extrainfo {
+    margin-top: 4vh;
+    width: 735px;
+    text-align: left;
+}
+
+.contactinfo {
+    font-style: italic;
+}
+
+/* unvisited link */
+a:link {
+    color: white;
+} 
+/* visited link */
+a:visited {
+    color: white;
+}
+/* mouse over link */
+a:hover {
+    color: red;
+}
+/* selected link */
+a:active {
+    color: cyan;
+}
+
+.imgsize {
+        width:  735px;
+        height: 500px;
+        object-fit: scale-down;
+}   
+
+.navbar-brand {
+    font-family: 'Dancing Script', cursive;
+}
+
+p {
+    font-family: 'PT Serif', serif;
+}
+
+.profile-img {
+    width:  150px;
+    height: 200px;
+    object-fit: scale-down;
+}
