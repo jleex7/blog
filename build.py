@@ -1,44 +1,53 @@
-# Building A Python Script
+def main():
 
-#Using Main Function
-def Main ()
-	# Python Script for Index.Html
-	top_html = open('templates/top.html').read()
-	bottom_html = open('templates/bottom.html').read()
-	index_html = open('content/index.html').read()
-	combined_index = top_html + index_html + bottom_html
-	print(combined_index)
-	open('docs/index.html', 'w+').write(combined_index)
+    # creates a list of directories called pages
+	pages = [
+            {
+                'filename': 'content/index.html',
+                'output': 'docs/index.html',
+                'title': 'Index',
+            },
+            {
+                'filename': 'content/technews.html',
+                'output': 'docs/technews.html',
+                'title': 'Tech_News',
+            },
+            {		
+                'filename': 'content/portfolio.html',
+                'output': 'docs/portfolio.html',
+                'title': 'Portfolio',
+            },
+            {		
+                'filename': 'content/contact.html',
+                'output': 'docs/contact.html',
+                'title': 'Contact',
+            },
+            ]
 
-	# Python Script for TechNews.Html
-	top_html = open('templates/top.html').read()
-	bottom_html = open('templates/bottom.html').read()
-	technews_html = open('content/technews.html').read()
-	combined_technews = top_html + technews_html + bottom_html
-	print(combined_technews)
-	open('docs/technews.html', 'w+').write(combined_technews)
+    
+	def joinpage(filename):
+		#read the top template
+		top = open('templates/top.html').read()
+		#read content file
+		content = open(filename).read()
+		#read bottom template
+		bottom = open('templates/bottom.html').read()
+		#combine top + content + file
+		combined_content = top + content + bottom
+		print(combined_content)
+		#returns combined_content to value
+		return combined_content
 
-	# Python Script for Portfolio.Html
-	top_html = open('templates/top.html').read()
-	bottom_html = open('templates/bottom.html').read()
-	portfolio_html = open('content/portfolio.html').read()
-	combined_portfolio = top_html + portfolio_html + bottom_html
-	print(combined_portfolio)
-	open('docs/portfolio.html', 'w+').write(combined_portfolio)
+	def write_outputpage(outputFilename, combined_page):
+        # opens updated content file and write it into docs folder
+		open(outputFilename, 'w+').write(combined_page)
 
-	# Python Script for Contact.Html
-	top_html = open('templates/top.html').read()
-	bottom_html = open('templates/bottom.html').read()
-	contact_html = open('content/contact.html').read()
-	combined_contact = top_html + contact_html + bottom_html
-	print(combined_contact)
-	open('docs/contact.html', 'w+').write(combined_contact)
+    # runs for loop for index/tech_news/portfolio/contact in pages and writes the files in doc folder
+	for page in pages:
+		page_title = page['title']
+		print(page_title)
+		combined_page = joinpage(page['filename'])
+		print(combined_page)
+		write_outputpage(page['output'], combined_page)
+               
 main()
-
-pages = [
-	{
-		'filename': 
-		'output': 
-		'title': index
-	}
-	
