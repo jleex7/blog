@@ -3,7 +3,8 @@ h2 {
 }
 
 .extrainfo {
-    margin-top: 4vh;
+    margin-top: auto;
+    #4vh;
     width: 735px;
     text-align: left;
 }
